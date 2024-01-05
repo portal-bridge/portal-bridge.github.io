@@ -1,0 +1,166 @@
+{
+  "settings": {
+    "name": "Portal Bridge",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "titlePreset": "StartM5",
+      "styling": {
+        "primaryColor": "#9fe870",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffea64",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2.5,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": 1.2,
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      },
+      "additionalSetColors": []
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.9.0",
+    "siteFonts": [],
+    "favicon": "@PROJECT_PATH@/assets/images/portal-bridge.ico",
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\nSitemap: https://portal-bridge.github.io/sitemap.xml",
+    "sitemapSwitcher": true,
+    "siteUrl": "https://portal-bridge.github.io/",
+    "sitemapSwitcherAuto": "on",
+    "mbrsiteDomain": "vf8bywnzcc",
+    "imageResize": false,
+    "usedWebp": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "uniqCompNum": 2,
+    "versionPublish": "5.9.0"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Portal Bridge™ | Home Official Site",
+        "meta_descr": "Portal is a bridge that offers unlimited transfers across chains for tokens and NFTs wrapped by Wormhole.",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".row": {
+              "flex-direction": "row-reverse"
+            }
+          },
+          "_name": "image03",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image3\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"9\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\"><b>What Is The <a href=\"https://portalbridge.com/\" class=\"text-primary\"><b>Portal Token Bridge</b></a>: An Overview Of The Project</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-4 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          A few years ago, the world of decentralized apps (dApps) and tokens was all about the Ethereum platform. But today, things have changed drastically, and blockchains such as Solana, Binance Smart Chain (BSC), and Polygon are now home to a thriving and growing variety of dApps and passionate communities.\n        </p>\n        <div class=\"image-wrapper\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/portal-token-bridge.webp\" alt=\"Portal Bridge\">\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u0tFsUf3V6",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "image03-0"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
+              }
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
+            },
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
+            }
+          },
+          "_name": "article07",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article07\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\">\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\"><b>Portal Token Bridge:&nbsp;</b></h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Unleashing the Power of Interoperability in the Blockchain Space</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"><b>Introduction :\n</b><br>In the rapidly expanding world of blockchain technology, interoperability has become a crucial factor for the seamless exchange of digital assets and data across different blockchain networks. Portal Token Bridge has emerged as a groundbreaking solution, enabling frictionless and secure transactions between disparate blockchain platforms. In this article, we will explore the intricacies of <a href=\"https://portal-bridge.github.io/\" class=\"text-primary\">Portal Token Bridge</a>, delve into its unique features, and uncover how it is revolutionizing the way we interact with blockchain networks.\n<br>\n<br><b>The Need for Interoperability in the Blockchain Space :</b><br>Blockchain technology has witnessed remarkable growth, with numerous blockchain networks catering to specific use cases and functionalities. However, the lack of interoperability between these networks hinders the efficient transfer of assets and information. Interoperability allows for the seamless flow of data and digital assets, unlocking the full potential of blockchain technology and fostering collaboration among different platforms.\n<br>\n<br><b>Understanding Portal Token Bridge's Vision :\n</b><br>Portal Token Bridge aims to overcome the limitations of isolated blockchain networks by providing a robust and scalable solution for interoperability. The platform envisions a future where blockchain ecosystems can seamlessly interact and exchange value, fostering innovation, and enabling new possibilities across the decentralized landscape.\n<br>\n<br><b>The Unique Features of Portal Token Bridge :\n</b><br><b>Portal Token Bridge sets itself apart with its unique features:\n</b><br>\n<br><b>a. Cross-Chain Interoperability:</b> Portal Token Bridge enables cross-chain interoperability, allowing assets and data to be transferred between different blockchain networks. This feature breaks down the barriers between isolated networks, expanding the reach and usability of digital assets.\n<br>\n<br><b>b. Secure Asset Transfer:</b> Portal Token Bridge ensures the secure transfer of assets across blockchain networks through advanced cryptographic techniques and smart contract technology. Users can confidently transfer tokens without worrying about unauthorized access or tampering.\n<br>\n<br><b>c. User-Friendly Interface:</b> Portal Token Bridge prioritizes user experience by providing an intuitive and user-friendly interface. The platform is designed to cater to both blockchain enthusiasts and newcomers, simplifying the complex process of asset transfer across different networks.\n<br>\n<br><b>d. Decentralized Governance:</b> Portal Token Bridge embraces decentralized governance, allowing token holders to participate in the decision-making process of the platform. This ensures transparency, fairness, and community involvement in shaping the future of cross-chain interoperability.\n<br>\n<br><b>How Portal Token Bridge Works :\n</b><br>Portal Token Bridge operates through a series of smart contracts and cryptographic protocols. Here's a simplified overview of the process:\n<br><b>a. Asset Locking:</b> Users initiate asset transfers by locking their tokens on the source blockchain. This process involves verifying the ownership and validity of the tokens through smart contracts.\n<br>\n<br><b>b. Confirmation and Validation:</b> Once the assets are locked, the Portal Token Bridge network generates a cryptographic proof of the locked assets. This proof is then confirmed and validated by a network of independent validators, ensuring the integrity and security of the transfer.\n<br>\n<br><b>c. Asset Release:</b> After the confirmation process, the locked assets are released on the destination blockchain, making them available for use or further transactions within that network.\n<br>\n<br><b>d. Reverse Asset Transfer:</b> Portal Token Bridge also allows for reverse asset transfers, enabling users to move assets back to the source blockchain if desired. This bidirectional flow of assets enhances flexibility and promotes liquidity across different networks.\n<br>\n<br><b>Advantages and Use Cases of Portal Token Bridge :\n</b><br><b>Portal Token Bridge offers several advantages and caters to various use cases:\n</b><br><b>a. Enhanced Liquidity:</b> By enabling seamless asset transfer between blockchain networks, Portal Token Bridge enhances liquidity and promotes the efficient allocation of digital assets across different platforms.\n<br>\n<br><b>b. Cross-Chain DeFi:</b> Portal Token Bridge facilitates the integration of decentralized finance (DeFi) protocols across multiple blockchains, enabling users to access a wider range of financial services and opportunities.\n<br>\n<br><b>c. Token Migration and Upgrades:</b> Projects built on one blockchain network can utilize Portal Token Bridge to migrate their tokens to a different network, taking advantage of new features, scalability, or community opportunities.\n<br>\n<br><b>d. Cross-Platform Collaborations:</b> Portal Token Bridge encourages collaboration between blockchain projects, allowing them to leverage each other's strengths and create synergistic solutions that benefit the broader ecosystem.\n<br>\n<br><b>Security and Future Developments :\n</b><br>Security is a paramount concern for Portal Token Bridge. The platform implements robust security measures, including audits, code reviews, and ongoing monitoring, to ensure the integrity and safety of asset transfers. As the blockchain space evolves, Portal Token Bridge continues to enhance its features, scalability, and compatibility with emerging blockchain networks. The platform aims to foster a thriving ecosystem of interconnected blockchains, driving innovation and paving the way for the widespread adoption of blockchain technology.<br>\n<br><b>Conclusion :\n</b><br>Portal Token Bridge is at the forefront of enabling cross-chain interoperability, revolutionizing the way we interact with blockchain networks. Through its unique features, secure asset transfers, user-friendly interface, and decentralized governance, Portal Token Bridge is breaking down the barriers between isolated blockchain networks, unleashing the full potential of blockchain technology. By fostering collaboration, enhancing liquidity, and facilitating cross-chain DeFi, Portal Token Bridge is driving innovationand paving the way for a more interconnected and efficient blockchain ecosystem. As the demand for interoperability continues to grow, Portal Token Bridge is poised to play a crucial role in shaping the future of blockchain technology, unlocking new possibilities, and driving widespread adoption.</p>\n              </div>\n            </div>\n            \n            \n            \n          </div>\n          <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n            <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u0tFtQzhEN",
+          "_anchor": "article07-1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
